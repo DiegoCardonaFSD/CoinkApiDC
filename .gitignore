@@ -1,0 +1,91 @@
+## -------------------------------------------------------------------
+## .NET / C# ignores
+## -------------------------------------------------------------------
+bin/
+obj/
+out/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+# .NET Secrets
+secrets.json
+
+# NuGet
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+project.lock.json
+
+# ASP.NET Scaffolding
+ScaffoldingReadMe.txt
+
+# Publish output
+publish/
+dist/
+
+
+## -------------------------------------------------------------------
+## Entity Framework
+## -------------------------------------------------------------------
+# EF Core Migrations (mantener solo si NO quieres subirlas)
+#migrations/
+#migrations/*
+
+# EF Snapshot (si no se desea subir)
+#*-Snapshot.cs
+
+# Avoid accidental database files
+*.db
+*.sqlite
+
+
+## -------------------------------------------------------------------
+## Docker
+## -------------------------------------------------------------------
+# Docker build files
+docker-compose.override.yml
+docker-compose.*.yml
+*.env   # << IMPORTANTÍSIMO: no subir tu .env
+.env.*
+
+
+## -------------------------------------------------------------------
+## IDEs (VSCode / Rider / Visual Studio)
+## -------------------------------------------------------------------
+# Visual Studio
+.vs/
+*.csproj.user
+
+# VS Code
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# JetBrains Rider
+.idea/
+*.sln.iml
+
+# MacOS
+.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+
+
+## -------------------------------------------------------------------
+## Logs & Temp files
+## -------------------------------------------------------------------
+*.log
+logs/
+temp/
+tmp/

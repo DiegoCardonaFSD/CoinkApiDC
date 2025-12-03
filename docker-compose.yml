@@ -6,6 +6,7 @@ services:
     container_name: coink-api-dev
     working_dir: /src
     command: bash -c "dotnet watch run --urls http://0.0.0.0:8080"
+    #command: ["sleep", "infinity"]
     volumes:
       - ./src/CoinkApiDC/:/src
     ports:

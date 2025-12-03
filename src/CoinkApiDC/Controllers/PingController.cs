@@ -9,7 +9,7 @@ namespace CoinkApiDC.Controllers
         [HttpGet]
         public IActionResult Ping()
         {
-            return Ok(new { message = "pongg" });
+            return Ok(new { message = "ponggg" });
         }
     }
 }

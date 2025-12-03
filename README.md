@@ -62,6 +62,10 @@ docker compose logs -f app
 docker compose down
 ```
 
+## Recompilar imagen base 
+``` bash
+docker build -t coinkapi .
+```
 ## Detener y borrar volúmenes (incluye base de datos)
 
 **Advertencia**: elimina datos de PostgreSQL.
@@ -138,4 +142,57 @@ docker compose exec postgres bash
 psql -U user -d coinkdb
 ```
 
+### Actualizar permisos para escribir en el contenedor
 
+``` bash
+sudo chown -R dev:dev /home/dev/projects
+sudo chmod -R u+rw /home/dev/projects
+```
+
+### Instalar EF dentro de un contenedor 
+
+``` bash
+dotnet tool install --global dotnet-ef --version 8.*
+o
+dotnet tool install --global dotnet-ef --version 8.0.22
+export PATH="$PATH:/root/.dotnet/tools"
+dotnet --version
+dotnet --list-sdks
+
+dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.0
+dotnet add package Microsoft.EntityFrameworkCore.Tools --version 8.0.0
+dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 8.0.0
+
+```
+
+### Inicializar migraciones 
+
+``` bash
+dotnet ef migrations add InitialCreate
+```
+
+### Aplicar migraciones a PostgreSQL
+
+``` bash
+dotnet ef database update
+```
+
+### Ver definicion en el schema de la tabla Users
+
+``` bash
+docker exec -it coink-api-db psql -U user -d coinkdb -c "SELECT column_name, data_type, character_maximum_length FROM information_schema.columns WHERE table_name='Users';"
+
+# all tables
+docker exec -it coink-api-db psql -U user -d coinkdb -c "SELECT table_name FROM information_schema.tables WHERE table_schema='public';"
+``` 
+
+### Borrar base de datos actual
+
+``` bash
+docker exec -it coink-api-db psql -U user -d postgres -c "DROP DATABASE coinkdb WITH (FORCE);"
+docker exec -it coink-api-db psql -U user -d postgres -c "CREATE DATABASE coinkdb;"
+```
+
+
+``` bash
+```

@@ -22,6 +22,8 @@ services:
     depends_on:
       - postgres
       - redis
+    env_file:
+      - .env
 
   postgres:
     image: postgres:16

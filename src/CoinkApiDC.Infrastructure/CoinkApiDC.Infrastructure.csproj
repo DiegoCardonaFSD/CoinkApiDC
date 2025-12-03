@@ -2,9 +2,11 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CoinkApiDC.Domain\CoinkApiDC.Domain.csproj" />
+    <ProjectReference Include="..\CoinkApiDC.Application\CoinkApiDC.Application.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Dapper" Version="2.1.66" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="8.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="8.0.0" />
     <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.0" />

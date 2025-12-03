@@ -163,18 +163,47 @@ dotnet add package Microsoft.EntityFrameworkCore.Design --version 8.0.0
 dotnet add package Microsoft.EntityFrameworkCore.Tools --version 8.0.0
 dotnet add package Npgsql.EntityFrameworkCore.PostgreSQL --version 8.0.0
 
+dotnet add src/CoinkApiDC.Infrastructure package Microsoft.EntityFrameworkCore
+dotnet add src/CoinkApiDC.Infrastructure package Microsoft.EntityFrameworkCore.Design
+dotnet add src/CoinkApiDC.Infrastructure package Npgsql.EntityFrameworkCore.PostgreSQL
+
+dotnet add src/CoinkApiDC.Infrastructure package Microsoft.EntityFrameworkCore.Design
+dotnet add src/CoinkApiDC.Infrastructure package Npgsql.EntityFrameworkCore.PostgreSQL
+
+dotnet build src/CoinkApiDC.Domain/CoinkApiDC.Domain.csproj
+dotnet build src/CoinkApiDC.Application/CoinkApiDC.Application.csproj
+dotnet build src/CoinkApiDC.Infrastructure/CoinkApiDC.Infrastructure.csproj
+dotnet build src/CoinkApiDC.Api/CoinkApiDC.Api.csproj
+
 ```
 
 ### Inicializar migraciones 
 
 ``` bash
 dotnet ef migrations add InitialCreate
+
+dotnet ef migrations add InitialCreate \
+    --project src/CoinkApiDC.Infrastructure/CoinkApiDC.Infrastructure.csproj \
+    --startup-project src/CoinkApiDC.Api/CoinkApiDC.Api.csproj \
+    --output-dir Migrations
+
 ```
 
 ### Aplicar migraciones a PostgreSQL
 
 ``` bash
 dotnet ef database update
+
+dotnet ef database update \
+    --project src/CoinkApiDC.Infrastructure/CoinkApiDC.Infrastructure.csproj \
+    --startup-project src/CoinkApiDC.Api/CoinkApiDC.Api.csproj
+
+export POSTGRES_HOST=172.24.43.127
+export POSTGRES_PORT=5432
+export POSTGRES_DB=coinkdb
+export POSTGRES_USER=user
+export POSTGRES_PASSWORD=pass
+    
 ```
 
 ### Ver definicion en el schema de la tabla Users

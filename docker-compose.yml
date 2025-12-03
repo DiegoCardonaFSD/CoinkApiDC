@@ -4,11 +4,19 @@ services:
   app:
     image: mcr.microsoft.com/dotnet/sdk:8.0
     container_name: coink-api-dev
-    working_dir: /src
-    command: bash -c "dotnet watch run --urls http://0.0.0.0:8080"
-    #command: ["sleep", "infinity"]
+    working_dir: /app
+    command:
+      [
+        "dotnet",
+        "watch",
+        "--project",
+        "/app/src/CoinkApiDC.Api/CoinkApiDC.Api.csproj",
+        "run",
+        "--urls",
+        "http://0.0.0.0:8080"
+      ]
     volumes:
-      - ./src/CoinkApiDC/:/src
+      - ./src:/app/src
     ports:
       - "8080:8080"
     depends_on:

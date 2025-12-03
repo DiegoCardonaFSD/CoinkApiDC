@@ -1,0 +1,17 @@
+/app/src/CoinkApiDC.Infrastructure/obj/Debug/net8.0/CoinkApiDC.Infrastructure.csproj.AssemblyReference.cache
+/app/src/CoinkApiDC.Infrastructure/obj/Debug/net8.0/CoinkApiDC.Infrastructure.GeneratedMSBuildEditorConfig.editorconfig
+/app/src/CoinkApiDC.Infrastructure/obj/Debug/net8.0/CoinkApiDC.Infrastructure.AssemblyInfoInputs.cache
+/app/src/CoinkApiDC.Infrastructure/obj/Debug/net8.0/CoinkApiDC.Infrastructure.AssemblyInfo.cs
+/app/src/CoinkApiDC.Infrastructure/obj/Debug/net8.0/CoinkApiDC.Infrastructure.csproj.CoreCompileInputs.cache
+/app/src/CoinkApiDC.Infrastructure/bin/Debug/net8.0/CoinkApiDC.Infrastructure.deps.json
+/app/src/CoinkApiDC.Infrastructure/bin/Debug/net8.0/CoinkApiDC.Infrastructure.runtimeconfig.json
+/app/src/CoinkApiDC.Infrastructure/bin/Debug/net8.0/CoinkApiDC.Infrastructure.dll
+/app/src/CoinkApiDC.Infrastructure/bin/Debug/net8.0/CoinkApiDC.Infrastructure.pdb
+/app/src/CoinkApiDC.Infrastructure/bin/Debug/net8.0/CoinkApiDC.Domain.dll
+/app/src/CoinkApiDC.Infrastructure/bin/Debug/net8.0/CoinkApiDC.Domain.pdb
+/app/src/CoinkApiDC.Infrastructure/obj/Debug/net8.0/CoinkApi.38180DC6.Up2Date
+/app/src/CoinkApiDC.Infrastructure/obj/Debug/net8.0/CoinkApiDC.Infrastructure.dll
+/app/src/CoinkApiDC.Infrastructure/obj/Debug/net8.0/refint/CoinkApiDC.Infrastructure.dll
+/app/src/CoinkApiDC.Infrastructure/obj/Debug/net8.0/CoinkApiDC.Infrastructure.pdb
+/app/src/CoinkApiDC.Infrastructure/obj/Debug/net8.0/CoinkApiDC.Infrastructure.genruntimeconfig.cache
+/app/src/CoinkApiDC.Infrastructure/obj/Debug/net8.0/ref/CoinkApiDC.Infrastructure.dll

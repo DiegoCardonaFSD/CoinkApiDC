@@ -1,0 +1,6 @@
+@CoinkApiDC.Api_HostAddress = http://localhost:5028
+
+GET {{CoinkApiDC.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

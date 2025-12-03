@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "IqibbQ9ZwUo+yz/vHipd5qp1MW2+Dsg2UDH4muf2LyU=",
+  "Source": "CoinkApiDC.Api",
+  "BasePath": "_content/CoinkApiDC.Api",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}

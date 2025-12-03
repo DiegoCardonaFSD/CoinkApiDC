@@ -1,0 +1,11 @@
+/app/src/CoinkApiDC.Domain/bin/Debug/net8.0/CoinkApiDC.Domain.deps.json
+/app/src/CoinkApiDC.Domain/bin/Debug/net8.0/CoinkApiDC.Domain.dll
+/app/src/CoinkApiDC.Domain/bin/Debug/net8.0/CoinkApiDC.Domain.pdb
+/app/src/CoinkApiDC.Domain/obj/Debug/net8.0/CoinkApiDC.Domain.GeneratedMSBuildEditorConfig.editorconfig
+/app/src/CoinkApiDC.Domain/obj/Debug/net8.0/CoinkApiDC.Domain.AssemblyInfoInputs.cache
+/app/src/CoinkApiDC.Domain/obj/Debug/net8.0/CoinkApiDC.Domain.AssemblyInfo.cs
+/app/src/CoinkApiDC.Domain/obj/Debug/net8.0/CoinkApiDC.Domain.csproj.CoreCompileInputs.cache
+/app/src/CoinkApiDC.Domain/obj/Debug/net8.0/CoinkApiDC.Domain.dll
+/app/src/CoinkApiDC.Domain/obj/Debug/net8.0/refint/CoinkApiDC.Domain.dll
+/app/src/CoinkApiDC.Domain/obj/Debug/net8.0/CoinkApiDC.Domain.pdb
+/app/src/CoinkApiDC.Domain/obj/Debug/net8.0/ref/CoinkApiDC.Domain.dll

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using CoinkApiDC.Domain.Entities;
+using CoinkApiDC.Infrastructure.Seed;
 
 
 namespace CoinkApiDC.Infrastructure.Data
@@ -31,6 +32,10 @@ namespace CoinkApiDC.Infrastructure.Data
 
             modelBuilder.Entity<Department>().Property(d => d.Name).HasMaxLength(100);
             modelBuilder.Entity<City>().Property(c => c.Name).HasMaxLength(100);
+
+            CountrySeed.Seed(modelBuilder);
+            DepartmentSeed.Seed(modelBuilder);
+            CitySeed.Seed(modelBuilder);
         }
     }
 }

@@ -206,6 +206,14 @@ export POSTGRES_PASSWORD=pass
     
 ```
 
+### Ejecutar seeders
+
+``` bash
+dotnet ef migrations add SeedInitialData \
+    --project src/CoinkApiDC.Infrastructure/CoinkApiDC.Infrastructure.csproj \
+    --startup-project src/CoinkApiDC.Api/CoinkApiDC.Api.csproj
+```    
+
 ### Ver definicion en el schema de la tabla Users
 
 ``` bash

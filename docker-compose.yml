@@ -1,0 +1,31 @@
+version: "3.9"
+
+services:
+  app:
+    image: mcr.microsoft.com/dotnet/sdk:8.0
+    container_name: coink-api-dev
+    working_dir: /src
+    command: bash -c "dotnet watch run --urls http://0.0.0.0:8080"
+    volumes:
+      - ./src/CoinkApiDC/:/src
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+      - redis
+
+  postgres:
+    image: postgres:16
+    container_name: coink-api-db
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: coinkdb
+    ports:
+      - "5432:5432"
+
+  redis:
+    image: redis:7
+    container_name: coink-api-redis
+    ports:
+      - "6379:6379"

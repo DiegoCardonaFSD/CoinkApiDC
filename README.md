@@ -236,6 +236,7 @@ docker exec -it coink-api-db psql -U user -d postgres -c "CREATE DATABASE coinkd
 dotnet add src/CoinkApiDC.Application/CoinkApiDC.Application.csproj reference src/CoinkApiDC.Domain/CoinkApiDC.Domain.csproj
 dotnet add src/CoinkApiDC.Infrastructure/CoinkApiDC.Infrastructure.csproj reference src/CoinkApiDC.Application/CoinkApiDC.Application.csproj
 
+
 ```
 
 

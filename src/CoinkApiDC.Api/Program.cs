@@ -15,11 +15,12 @@ var password = Environment.GetEnvironmentVariable("POSTGRES_PASSWORD");
 
 var connectionString = $"Host={host};Port={port};Database={db};Username={user};Password={password}";
 
-Console.WriteLine($"Connecting to database with: {connectionString}");
+
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(connectionString)
 );
 // Register services
+builder.Services.AddScoped<IUserService, UserService>();
 builder.Services.AddScoped<ICountryService, GeographyService>();
 builder.Services.AddScoped<IDepartmentService, GeographyService>();
 builder.Services.AddScoped<ICityService, GeographyService>();

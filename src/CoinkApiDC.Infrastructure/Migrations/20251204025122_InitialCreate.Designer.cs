@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CoinkApiDC.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251203195614_InitialCreate")]
+    [Migration("20251204025122_InitialCreate")]
     partial class InitialCreate
     {
         /// <inheritdoc />
@@ -73,6 +73,62 @@ namespace CoinkApiDC.Infrastructure.Migrations
                     b.HasIndex("DepartmentId");
 
                     b.ToTable("Cities");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            DepartmentId = 1,
+                            Name = "Medellín"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            DepartmentId = 1,
+                            Name = "Envigado"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            DepartmentId = 1,
+                            Name = "Marinilla"
+                        },
+                        new
+                        {
+                            Id = 4,
+                            DepartmentId = 2,
+                            Name = "Bogotá"
+                        },
+                        new
+                        {
+                            Id = 5,
+                            DepartmentId = 2,
+                            Name = "Cajicá"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            DepartmentId = 2,
+                            Name = "Chía"
+                        },
+                        new
+                        {
+                            Id = 7,
+                            DepartmentId = 3,
+                            Name = "Cali"
+                        },
+                        new
+                        {
+                            Id = 8,
+                            DepartmentId = 3,
+                            Name = "Palmira"
+                        },
+                        new
+                        {
+                            Id = 9,
+                            DepartmentId = 3,
+                            Name = "Buenaventura"
+                        });
                 });
 
             modelBuilder.Entity("CoinkApiDC.Domain.Entities.Country", b =>
@@ -96,6 +152,14 @@ namespace CoinkApiDC.Infrastructure.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Countries");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Code = "CO",
+                            Name = "Colombia"
+                        });
                 });
 
             modelBuilder.Entity("CoinkApiDC.Domain.Entities.Department", b =>
@@ -119,6 +183,26 @@ namespace CoinkApiDC.Infrastructure.Migrations
                     b.HasIndex("CountryId");
 
                     b.ToTable("Departments");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CountryId = 1,
+                            Name = "Antioquia"
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CountryId = 1,
+                            Name = "Cundinamarca"
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CountryId = 1,
+                            Name = "Valle del Cauca"
+                        });
                 });
 
             modelBuilder.Entity("CoinkApiDC.Domain.Entities.User", b =>

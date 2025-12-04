@@ -11,7 +11,7 @@ using Npgsql.EntityFrameworkCore.PostgreSQL.Metadata;
 namespace CoinkApiDC.Infrastructure.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20251203212057_SeedInitialData")]
+    [Migration("20251204025156_SeedInitialData")]
     partial class SeedInitialData
     {
         /// <inheritdoc />

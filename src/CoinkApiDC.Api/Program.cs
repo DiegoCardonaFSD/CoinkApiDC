@@ -21,9 +21,9 @@ builder.Services.AddDbContext<AppDbContext>(options =>
 );
 // Register services
 builder.Services.AddScoped<IUserService, UserService>();
-builder.Services.AddScoped<ICountryService, GeographyService>();
-builder.Services.AddScoped<IDepartmentService, GeographyService>();
-builder.Services.AddScoped<ICityService, GeographyService>();
+builder.Services.AddScoped<ICountryService, CountryService>();
+builder.Services.AddScoped<IDepartmentService, DepartmentService>();
+builder.Services.AddScoped<ICityService, CityService>();
 
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();

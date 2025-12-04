@@ -1,7 +1,9 @@
-namespace CoinkApiDC.Application.Interfaces;
 using CoinkApiDC.Application.DTOs;
 
-public interface IUserService
+namespace CoinkApiDC.Application.Interfaces
+{
+    public interface IUserService
 {
     Task<(int userId, int addressId)> CreateUserAsync(CreateUserRequest request);
+}
 }

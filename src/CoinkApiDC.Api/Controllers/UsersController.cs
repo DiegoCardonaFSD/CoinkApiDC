@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace CoinkApiDC.Api.Controllers;
 
 [ApiController]
-[Route("api/v1/users")]
+[Route("api/v1/[controller]")]
 public class UsersController : ControllerBase
 {
     private readonly IUserService _userService;

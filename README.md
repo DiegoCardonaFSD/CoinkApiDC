@@ -1,4 +1,10 @@
-## Evaluación técnica para Coink - Elaborada por Diego Cardona
+# Evaluación técnica para Coink - Elaborada por Diego Cardona
+
+Para la instalación de este proyecto se debe hacer uso de docker, en mi caso particular, creé la base de configuración sobre ubuntu 22.04.5 lts, montado sobre WSL2, y todo el desarrollo se hizo sobre ubuntu de manera limpia, lo que quiere decir que solo se utilizo ubunto para hospedar el codigo fuente, todo lo demas se hizo sobre contenedores de docker.
+
+A continuación dejo algunos comando que serán utiles al momento de configuara este proyecto de manera local.
+
+**En el folder dbqueires se encontrara el store procedure, algunas funciones y el dump de la base de datos**
 
 
 ## CoinkApiDC -- .NET 8 + PostgreSQL + Redis + Docker
@@ -8,25 +14,35 @@ ejecutada completamente dentro de **Docker**, utilizando:
 
 -   **ASP.NET Core 8**
 -   **PostgreSQL 16**
--   **Redis 7**
 -   **Docker & Docker Compose**
 -   **Swagger (OpenAPI)**
 
 Permite desarrollar sin instalar .NET localmente.
 
-Adicionalmente para uso local en mi caso, estoy usando Windows 11, y estoy corriendo docker sobre ubuntu en WSL2
+Adicionalmente para uso local en mi caso, estoy usando Windows 11, y estoy corriendo docker sobre ubuntu en WSL2. 
+
+Para realizar pruebas de los endpoints desarrollados uste swagger como documentación y como herramienta de pruebas.
 
 ------------------------------------------------------------------------
 
 ## Estructura del Proyecto
 
+En este caso utilicé clean architecture como patron base de diseño para el api, adicionalmente implemente el codigo siguiendo el patron SOLID en la mayoria de los artefactos desarrollados.
+
     .
     ├── docker-compose.yml
     ├── Dockerfile
+    ├── README.md
+    ├── .env.example
     └── src/
         └── CoinkApiDC/
-            ├── CoinkApiDC.csproj
-            └── Program.cs
+            ├── CoinkApiDC.Api
+            ├── CoinkApiDC.Application
+            ├── CoinkApiDC.Domain
+            └── CoinkApiDC.Infrastructure
+
+
+    
 
 ------------------------------------------------------------------------
 
@@ -197,7 +213,10 @@ dotnet ef database update
 dotnet ef database update \
     --project src/CoinkApiDC.Infrastructure/CoinkApiDC.Infrastructure.csproj \
     --startup-project src/CoinkApiDC.Api/CoinkApiDC.Api.csproj
+```
 
+### Exports para variables de entorno en caso de sere requeridas durante el proceso de desarollo
+``` bash
 export POSTGRES_HOST=172.24.43.127
 export POSTGRES_PORT=5432
 export POSTGRES_DB=coinkdb
@@ -235,13 +254,4 @@ docker exec -it coink-api-db psql -U user -d postgres -c "CREATE DATABASE coinkd
 ``` bash
 dotnet add src/CoinkApiDC.Application/CoinkApiDC.Application.csproj reference src/CoinkApiDC.Domain/CoinkApiDC.Domain.csproj
 dotnet add src/CoinkApiDC.Infrastructure/CoinkApiDC.Infrastructure.csproj reference src/CoinkApiDC.Application/CoinkApiDC.Application.csproj
-
-
-```
-
-
-``` bash
-```
-
-``` bash
 ```

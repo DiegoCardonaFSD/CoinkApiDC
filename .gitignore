@@ -49,7 +49,7 @@ dist/
 docker-compose.override.yml
 docker-compose.*.yml
 *.env   # << IMPORTANTÍSIMO: no subir tu .env
-.env.*
+.env
 
 
 ## -------------------------------------------------------------------
